@@ -5,8 +5,8 @@ import VisitorCreate from './VisitorCreate';
 import VisitorEdit from './VisitorEdit';
 
 export default {
-    list: VisitorList,
-    create: VisitorCreate,
-    edit: VisitorEdit,
-    icon: VisitorIcon,
+  list: VisitorList,
+  create: VisitorCreate,
+  edit: VisitorEdit,
+  icon: VisitorIcon,
 };

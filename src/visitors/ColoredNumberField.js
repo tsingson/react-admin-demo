@@ -1,19 +1,19 @@
 import React from 'react';
-import { NumberField } from 'react-admin';
+import {NumberField} from 'react-admin';
 
 const colored = WrappedComponent => {
-    const Colored = props =>
-        props.record[props.source] > 500 ? (
-            <span style={{ color: 'red' }}>
+  const Colored = props =>
+    props.record[props.source] > 500 ? (
+      <span style={{color: 'red'}}>
                 <WrappedComponent {...props} />
             </span>
-        ) : (
-            <WrappedComponent {...props} />
-        );
+    ) : (
+      <WrappedComponent {...props} />
+    );
 
-    Colored.displayName = `Colored(${WrappedComponent.displayName})`;
+  Colored.displayName = `Colored(${WrappedComponent.displayName})`;
 
-    return Colored;
+  return Colored;
 };
 
 const ColoredNumberField = colored(NumberField);
