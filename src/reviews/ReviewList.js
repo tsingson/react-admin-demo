@@ -62,7 +62,8 @@ class ReviewList extends Component {
                   bulkActionButtons={<ReviewsBulkActionButtons />}
                   filters={<ReviewFilter />}
                   perPage={25}
-                  sort={{field: 'date', order: 'DESC'}}>
+                  sort={{field: 'date', order: 'DESC'}}
+                >
                   <Responsive
                     xsmall={<ReviewListMobile />}
                     medium={<ReviewListDesktop />}
@@ -75,7 +76,8 @@ class ReviewList extends Component {
                   onClose={this.handleClose}
                   classes={{
                     paper: classes.drawerPaper,
-                  }}>
+                  }}
+                >
                   {/* To avoid any errors if the route does not match, we don't render at all the component in this case */}
                   {isMatch ? (
                     <ReviewEdit

@@ -5,7 +5,7 @@ import FullNameField from './FullNameField';
 
 const CustomerReferenceField = props => (
   <ReferenceField source="customer_id" reference="customers" {...props}>
-    <FullNameField/>
+    <FullNameField />
   </ReferenceField>
 );
 

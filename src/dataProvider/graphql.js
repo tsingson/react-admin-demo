@@ -1,4 +1,6 @@
-import buildApolloClient, {buildQuery as buildQueryFactory} from 'ra-data-graphql-simple';
+import buildApolloClient, {
+  buildQuery as buildQueryFactory,
+} from 'ra-data-graphql-simple';
 import {DELETE} from 'ra-core';
 import gql from 'graphql-tag';
 

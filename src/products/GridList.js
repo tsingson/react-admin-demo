@@ -50,7 +50,8 @@ const LoadingGridList = ({width, classes, nbItems = 10}) => (
     <MuiGridList
       cellHeight={180}
       cols={getColsForWidth(width)}
-      className={classes.gridList}>
+      className={classes.gridList}
+    >
       {' '}
       {times(nbItems, key => (
         <GridListTile key={key}>
@@ -66,12 +67,14 @@ const LoadedGridList = ({classes, ids, data, basePath, width}) => (
     <MuiGridList
       cellHeight={180}
       cols={getColsForWidth(width)}
-      className={classes.gridList}>
+      className={classes.gridList}
+    >
       {ids.map(id => (
         <GridListTile
           component={Link}
           key={id}
-          to={linkToRecord(basePath, data[id].id)}>
+          to={linkToRecord(basePath, data[id].id)}
+        >
           <img src={data[id].thumbnail} alt="" />
           <GridListTileBar
             className={classes.tileBar}

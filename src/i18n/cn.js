@@ -1,13 +1,13 @@
-import englishMessages from 'ra-language-english';
+import chineseMessages from 'ra-language-chinese';
 
 export default {
-  ...englishMessages,
+  ...chineseMessages,
   pos: {
-    search: 'Search',
-    configuration: 'Configuration',
-    language: 'Language',
+    search: '搜索',
+    configuration: '配置',
+    language: '语言',
     theme: {
-      name: 'Theme',
+      name: '主题',
       light: 'Light',
       dark: 'Dark',
     },
@@ -22,7 +22,7 @@ export default {
           'by %{customer_name}, one item |||| by %{customer_name}, %{nb_items} items',
       },
       welcome: {
-        title: 'Welcome to vk admin platform',
+        title: '欢迎使用 vk 管理平台',
         subtitle:
           "This is the admin of an imaginary poster shop. Feel free to explore and modify the data - it's local to your computer, and will reset each time you reload.",
         aor_button: 'react-admin site',

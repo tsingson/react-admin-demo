@@ -63,10 +63,10 @@ const styles = theme => ({
 
 // see http://redux-form.com/6.4.3/examples/material-ui/
 const renderInput = ({
-                       meta: {touched, error} = {},
-                       input: {...inputProps},
-                       ...props
-                     }) => (
+  meta: {touched, error} = {},
+  input: {...inputProps},
+  ...props
+}) => (
   <TextField
     error={!!(touched && error)}
     helperText={touched && error}
@@ -80,9 +80,7 @@ class Login extends Component {
   login = auth =>
     this.props.userLogin(
       auth,
-      this.props.location.state
-        ? this.props.location.state.nextPathname
-        : '/',
+      this.props.location.state ? this.props.location.state.nextPathname : '/',
     );
 
   render() {
@@ -92,7 +90,7 @@ class Login extends Component {
         <Card className={classes.card}>
           <div className={classes.avatar}>
             <Avatar className={classes.icon}>
-              <LockIcon/>
+              <LockIcon />
             </Avatar>
           </div>
           <form onSubmit={handleSubmit(this.login)}>
@@ -124,16 +122,15 @@ class Login extends Component {
                 color="primary"
                 disabled={isLoading}
                 className={classes.button}
-                fullWidth>
-                {isLoading && (
-                  <CircularProgress size={25} thickness={2}/>
-                )}
+                fullWidth
+              >
+                {isLoading && <CircularProgress size={25} thickness={2} />}
                 {translate('ra.auth.sign_in')}
               </Button>
             </CardActions>
           </form>
         </Card>
-        <Notification/>
+        <Notification />
       </div>
     );
   }

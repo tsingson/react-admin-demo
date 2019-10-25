@@ -32,13 +32,15 @@ const AcceptButton = ({record, translate}) =>
       type="UPDATE"
       resource="reviews"
       payload={{id: record.id, data: {status: 'accepted'}}}
-      options={sideEffects}>
+      options={sideEffects}
+    >
       {approve => (
         <Button
           variant="outlined"
           color="primary"
           size="small"
-          onClick={approve}>
+          onClick={approve}
+        >
           <ThumbUp
             color="primary"
             style={{paddingRight: '0.5em', color: 'green'}}

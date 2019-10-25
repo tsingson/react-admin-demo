@@ -30,22 +30,18 @@ const styles = {
 };
 
 const SubMenu = ({
-                   handleToggle,
-                   sidebarIsOpen,
-                   isOpen,
-                   name,
-                   icon,
-                   classes,
-                   children,
-                   translate,
-                 }) => (
+  handleToggle,
+  sidebarIsOpen,
+  isOpen,
+  name,
+  icon,
+  classes,
+  children,
+  translate,
+}) => (
   <Fragment>
-    <ListItem
-      dense
-      button
-      onClick={handleToggle}
-      className={classes.listItem}>
-      <ListItemIcon>{isOpen ? <ExpandMore/> : icon}</ListItemIcon>
+    <ListItem dense button onClick={handleToggle} className={classes.listItem}>
+      <ListItemIcon>{isOpen ? <ExpandMore /> : icon}</ListItemIcon>
       <ListItemText
         inset
         primary={isOpen ? translate(name) : ''}
@@ -59,13 +55,12 @@ const SubMenu = ({
         component="div"
         disablePadding
         className={
-          sidebarIsOpen
-            ? classes.sidebarIsOpen
-            : classes.sidebarIsClosed
-        }>
+          sidebarIsOpen ? classes.sidebarIsOpen : classes.sidebarIsClosed
+        }
+      >
         {children}
       </List>
-      <Divider/>
+      <Divider />
     </Collapse>
   </Fragment>
 );

@@ -22,8 +22,8 @@ import dataProviderFactory from './dataProvider';
 import fakeServerFactory from './fakeServer';
 
 const i18nProvider = locale => {
-  if (locale === 'fr') {
-    return import('./i18n/fr').then(messages => messages.default);
+  if (locale === 'cn') {
+    return import('./i18n/cn').then(messages => messages.default);
   }
 
   // Always fallback on english
@@ -72,7 +72,8 @@ class App extends Component {
         loginPage={Login}
         appLayout={Layout}
         locale="en"
-        i18nProvider={i18nProvider}>
+        i18nProvider={i18nProvider}
+      >
         <Resource name="customers" {...visitors} />
         <Resource name="commands" {...orders} options={{label: 'Orders'}} />
         <Resource name="invoices" {...invoices} />

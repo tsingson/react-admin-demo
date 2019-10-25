@@ -29,21 +29,18 @@ const styles = {
 };
 
 const ReviewMobileList = ({
-                            basePath,
-                            classes = {},
-                            className,
-                            data,
-                            ids,
-                            isLoading,
-                            total,
-                          }) =>
+  basePath,
+  classes = {},
+  className,
+  data,
+  ids,
+  isLoading,
+  total,
+}) =>
   (isLoading || total > 0) && (
     <List className={classes.root}>
       {ids.map(id => (
-        <Link
-          to={linkToRecord(basePath, id)}
-          className={classes.link}
-          key={id}>
+        <Link to={linkToRecord(basePath, id)} className={classes.link} key={id}>
           <ListItem button>
             <ListItemAvatar>
               <ReferenceField
@@ -51,8 +48,9 @@ const ReviewMobileList = ({
                 source="customer_id"
                 reference="customers"
                 basePath={basePath}
-                linkType={false}>
-                <AvatarField size={40}/>
+                linkType={false}
+              >
+                <AvatarField size={40} />
               </ReferenceField>
             </ListItemAvatar>
             <ListItemText
@@ -63,7 +61,8 @@ const ReviewMobileList = ({
                     source="customer_id"
                     reference="customers"
                     basePath={basePath}
-                    linkType={false}>
+                    linkType={false}
+                  >
                     <FunctionField
                       render={record =>
                         `${record.first_name} ${record.last_name}`
@@ -78,7 +77,8 @@ const ReviewMobileList = ({
                     source="product_id"
                     reference="products"
                     basePath={basePath}
-                    linkType={false}>
+                    linkType={false}
+                  >
                     <TextField
                       source="reference"
                       variant="subheading"

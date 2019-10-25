@@ -22,11 +22,11 @@ import MobileGrid from './MobileGrid';
 
 const VisitorFilter = props => (
   <Filter {...props}>
-    <SearchInput source="q" alwaysOn/>
-    <DateInput source="last_seen_gte"/>
-    <NullableBooleanInput source="has_ordered"/>
-    <NullableBooleanInput source="has_newsletter" defaultValue/>
-    <SegmentInput/>
+    <SearchInput source="q" alwaysOn />
+    <DateInput source="last_seen_gte" />
+    <NullableBooleanInput source="has_ordered" />
+    <NullableBooleanInput source="has_newsletter" defaultValue />
+    <SegmentInput />
   </Filter>
 );
 
@@ -37,15 +37,16 @@ const styles = {
 const VisitorList = ({classes, ...props}) => (
   <List
     {...props}
-    filters={<VisitorFilter/>}
+    filters={<VisitorFilter />}
     sort={{field: 'last_seen', order: 'DESC'}}
-    perPage={25}>
+    perPage={25}
+  >
     <Responsive
-      xsmall={<MobileGrid/>}
+      xsmall={<MobileGrid />}
       medium={
         <Datagrid>
-          <CustomerLinkField/>
-          <DateField source="last_seen" type="date"/>
+          <CustomerLinkField />
+          <DateField source="last_seen" type="date" />
           <NumberField
             source="nb_commands"
             label="resources.customers.fields.commands"
@@ -55,10 +56,10 @@ const VisitorList = ({classes, ...props}) => (
             source="total_spent"
             options={{style: 'currency', currency: 'USD'}}
           />
-          <DateField source="latest_purchase" showTime/>
-          <BooleanField source="has_newsletter" label="News."/>
-          <SegmentsField/>
-          <EditButton/>
+          <DateField source="latest_purchase" showTime />
+          <BooleanField source="has_newsletter" label="News." />
+          <SegmentsField />
+          <EditButton />
         </Datagrid>
       }
     />

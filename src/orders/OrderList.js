@@ -31,16 +31,16 @@ const filterStyles = {
 
 const OrderFilter = withStyles(filterStyles)(({classes, ...props}) => (
   <Filter {...props}>
-    <SearchInput source="q" alwaysOn/>
+    <SearchInput source="q" alwaysOn />
     <ReferenceInput source="customer_id" reference="customers">
       <AutocompleteInput
         optionText={choice => `${choice.first_name} ${choice.last_name}`}
       />
     </ReferenceInput>
-    <DateInput source="date_gte"/>
-    <DateInput source="date_lte"/>
-    <TextInput source="total_gte"/>
-    <NullableBooleanInput source="returned"/>
+    <DateInput source="date_gte" />
+    <DateInput source="date_lte" />
+    <TextInput source="total_gte" />
+    <NullableBooleanInput source="returned" />
   </Filter>
 ));
 
@@ -78,24 +78,25 @@ class TabbedDatagrid extends React.Component {
           centered
           value={filterValues.status}
           indicatorColor="primary"
-          onChange={this.handleChange}>
+          onChange={this.handleChange}
+        >
           {this.tabs.map(choice => (
-            <Tab key={choice.id} label={choice.name} value={choice.id}/>
+            <Tab key={choice.id} label={choice.name} value={choice.id} />
           ))}
         </Tabs>
-        <Divider/>
+        <Divider />
         <Responsive
           xsmall={
-            <MobileGrid {...props} ids={this.state[filterValues.status]}/>
+            <MobileGrid {...props} ids={this.state[filterValues.status]} />
           }
           medium={
             <div>
               {filterValues.status === 'ordered' && (
                 <Datagrid {...props} ids={this.state.ordered}>
-                  <DateField source="date" showTime/>
-                  <TextField source="reference"/>
-                  <CustomerReferenceField/>
-                  <NbItemsField/>
+                  <DateField source="date" showTime />
+                  <TextField source="reference" />
+                  <CustomerReferenceField />
+                  <NbItemsField />
                   <NumberField
                     source="total"
                     options={{
@@ -104,15 +105,15 @@ class TabbedDatagrid extends React.Component {
                     }}
                     className={classes.total}
                   />
-                  <EditButton/>
+                  <EditButton />
                 </Datagrid>
               )}
               {filterValues.status === 'delivered' && (
                 <Datagrid {...props} ids={this.state.delivered}>
-                  <DateField source="date" showTime/>
-                  <TextField source="reference"/>
-                  <CustomerReferenceField/>
-                  <NbItemsField/>
+                  <DateField source="date" showTime />
+                  <TextField source="reference" />
+                  <CustomerReferenceField />
+                  <NbItemsField />
                   <NumberField
                     source="total"
                     options={{
@@ -121,16 +122,16 @@ class TabbedDatagrid extends React.Component {
                     }}
                     className={classes.total}
                   />
-                  <BooleanField source="returned"/>
-                  <EditButton/>
+                  <BooleanField source="returned" />
+                  <EditButton />
                 </Datagrid>
               )}
               {filterValues.status === 'cancelled' && (
                 <Datagrid {...props} ids={this.state.cancelled}>
-                  <DateField source="date" showTime/>
-                  <TextField source="reference"/>
-                  <CustomerReferenceField/>
-                  <NbItemsField/>
+                  <DateField source="date" showTime />
+                  <TextField source="reference" />
+                  <CustomerReferenceField />
+                  <NbItemsField />
                   <NumberField
                     source="total"
                     options={{
@@ -139,8 +140,8 @@ class TabbedDatagrid extends React.Component {
                     }}
                     className={classes.total}
                   />
-                  <BooleanField source="returned"/>
-                  <EditButton/>
+                  <BooleanField source="returned" />
+                  <EditButton />
                 </Datagrid>
               )}
             </div>
@@ -159,8 +160,9 @@ const OrderList = ({classes, ...props}) => (
     filterDefaultValues={{status: 'ordered'}}
     sort={{field: 'date', order: 'DESC'}}
     perPage={25}
-    filters={<OrderFilter/>}>
-    <StyledTabbedDatagrid/>
+    filters={<OrderFilter />}
+  >
+    <StyledTabbedDatagrid />
   </List>
 );
 

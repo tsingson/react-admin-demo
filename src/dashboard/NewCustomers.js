@@ -42,25 +42,23 @@ const styles = theme => ({
 
 const NewCustomers = ({visitors = [], nb, translate, classes}) => (
   <div className={classes.main}>
-    <CardIcon Icon={CustomerIcon} bgColor="#4caf50"/>
+    <CardIcon Icon={CustomerIcon} bgColor="#4caf50" />
     <Card className={classes.card}>
       <Typography className={classes.title} color="textSecondary">
         {translate('pos.dashboard.new_customers')}
       </Typography>
-      <Typography
-        variant="headline"
-        component="h2"
-        className={classes.value}>
+      <Typography variant="headline" component="h2" className={classes.value}>
         {nb}
       </Typography>
-      <Divider/>
+      <Divider />
       <List>
         {visitors.map(record => (
           <ListItem
             button
             to={`/customers/${record.id}`}
             component={Link}
-            key={record.id}>
+            key={record.id}
+          >
             <Avatar
               src={`${record.avatar}?size=32x32`}
               className={classes.avatar}

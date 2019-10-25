@@ -24,7 +24,7 @@ const styles = {
 
 const MonthlyRevenue = ({value, translate, classes}) => (
   <div className={classes.main}>
-    <CardIcon Icon={DollarIcon} bgColor="#31708f"/>
+    <CardIcon Icon={DollarIcon} bgColor="#31708f" />
     <Card className={classes.card}>
       <Typography className={classes.title} color="textSecondary">
         pos.dashboard.monthly_revenue

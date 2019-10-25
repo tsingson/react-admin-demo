@@ -24,7 +24,7 @@ const styles = {
 
 const NbNewOrders = ({value, translate, classes}) => (
   <div className={classes.main}>
-    <CardIcon Icon={ShoppingCartIcon} bgColor="#ff9800"/>
+    <CardIcon Icon={ShoppingCartIcon} bgColor="#ff9800" />
     <Card className={classes.card}>
       <Typography className={classes.title} color="textSecondary">
         {translate('pos.dashboard.new_orders')}

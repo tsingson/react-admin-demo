@@ -88,7 +88,7 @@ class Basket extends Component {
                 ),
             )}
             <TableRow>
-              <TableCell colSpan={2}/>
+              <TableCell colSpan={2} />
               <TableCell>
                 {translate('resources.commands.fields.basket.sum')}
               </TableCell>
@@ -100,7 +100,7 @@ class Basket extends Component {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell colSpan={2}/>
+              <TableCell colSpan={2} />
               <TableCell>
                 {translate('resources.commands.fields.basket.delivery')}
               </TableCell>
@@ -112,7 +112,7 @@ class Basket extends Component {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell colSpan={2}/>
+              <TableCell colSpan={2} />
               <TableCell>
                 {translate('resources.commands.fields.basket.tax_rate')}
               </TableCell>
@@ -123,7 +123,7 @@ class Basket extends Component {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell colSpan={2}/>
+              <TableCell colSpan={2} />
               <TableCell className={classes.boldCell}>
                 {translate('resources.commands.fields.basket.total')}
               </TableCell>
@@ -131,7 +131,8 @@ class Basket extends Component {
                 className={classnames(
                   classes.boldCell,
                   classes.rightAlignedCell,
-                )}>
+                )}
+              >
                 {record.total.toLocaleString(undefined, {
                   style: 'currency',
                   currency: 'USD',
@@ -151,10 +152,10 @@ const mapStateToProps = (state, props) => {
   } = props;
   const productIds = basket.map(item => item.product_id);
   return {
-    products: productIds.map(
-      productId => state.admin.resources.products.data[productId]).
-      filter(r => typeof r !== 'undefined').
-      reduce((prev, next) => {
+    products: productIds
+      .map(productId => state.admin.resources.products.data[productId])
+      .filter(r => typeof r !== 'undefined')
+      .reduce((prev, next) => {
         prev[next.id] = next;
         return prev;
       }, {}),

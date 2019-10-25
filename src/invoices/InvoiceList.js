@@ -16,33 +16,34 @@ import InvoiceShow from './InvoiceShow';
 
 const ListFilters = props => (
   <Filter {...props}>
-    <DateInput source="date_gte" alwaysOn/>
-    <DateInput source="date_lte" alwaysOn/>
+    <DateInput source="date_gte" alwaysOn />
+    <DateInput source="date_lte" alwaysOn />
   </Filter>
 );
 
 const InvoiceList = props => (
-  <List {...props} filters={<ListFilters/>} perPage={25}>
-    <Datagrid rowClick="expand" expand={<InvoiceShow/>}>
-      <TextField source="id"/>
-      <DateField source="date"/>
+  <List {...props} filters={<ListFilters />} perPage={25}>
+    <Datagrid rowClick="expand" expand={<InvoiceShow />}>
+      <TextField source="id" />
+      <DateField source="date" />
       <ReferenceField source="customer_id" reference="customers">
-        <FullNameField/>
+        <FullNameField />
       </ReferenceField>
       <ReferenceField
         source="customer_id"
         reference="customers"
         linkType={false}
-        label="resources.invoices.fields.address">
-        <AddressField/>
+        label="resources.invoices.fields.address"
+      >
+        <AddressField />
       </ReferenceField>
       <ReferenceField source="command_id" reference="commands">
-        <TextField source="reference"/>
+        <TextField source="reference" />
       </ReferenceField>
-      <NumberField source="total_ex_taxes"/>
-      <NumberField source="delivery_fees"/>
-      <NumberField source="taxes"/>
-      <NumberField source="total"/>
+      <NumberField source="total_ex_taxes" />
+      <NumberField source="delivery_fees" />
+      <NumberField source="taxes" />
+      <NumberField source="total" />
     </Datagrid>
   </List>
 );

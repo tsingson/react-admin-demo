@@ -47,7 +47,7 @@ const MobileGrid = ({classes, ids, data, basePath, translate}) => (
             <div className={classes.cardTitleContent}>
               <span>
                 {translate('resources.commands.name', 1)}:&nbsp;
-                <TextField record={data[id]} source="reference"/>
+                <TextField record={data[id]} source="reference" />
               </span>
               <EditButton
                 resource="commands"
@@ -60,11 +60,11 @@ const MobileGrid = ({classes, ids, data, basePath, translate}) => (
         <CardContent className={classes.cardContent}>
           <span className={classes.cardContentRow}>
             {translate('resources.customers.name', 1)}:&nbsp;
-            <CustomerReferenceField record={data[id]} basePath={basePath}/>
+            <CustomerReferenceField record={data[id]} basePath={basePath} />
           </span>
           <span className={classes.cardContentRow}>
             {translate('resources.reviews.fields.date')}:&nbsp;
-            <DateField record={data[id]} source="date" showTime/>
+            <DateField record={data[id]} source="date" showTime />
           </span>
           <span className={classes.cardContentRow}>
             {translate('resources.commands.fields.basket.total')}
@@ -78,11 +78,11 @@ const MobileGrid = ({classes, ids, data, basePath, translate}) => (
           </span>
           <span className={classes.cardContentRow}>
             {translate('resources.commands.fields.status')}:&nbsp;
-            <TextField source="status" record={data[id]}/>
+            <TextField source="status" record={data[id]} />
           </span>
           <span className={classes.cardContentRow}>
             {translate('resources.commands.fields.returned')}:&nbsp;
-            <BooleanField record={data[id]} source="returned"/>
+            <BooleanField record={data[id]} source="returned" />
           </span>
         </CardContent>
       </Card>

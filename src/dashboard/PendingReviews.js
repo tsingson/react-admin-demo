@@ -53,45 +53,43 @@ const location = {
 };
 
 const PendingReviews = ({
-                          reviews = [],
-                          customers = {},
-                          nb,
-                          translate,
-                          classes,
-                        }) => (
+  reviews = [],
+  customers = {},
+  nb,
+  translate,
+  classes,
+}) => (
   <div className={classes.main}>
-    <CardIcon Icon={CommentIcon} bgColor="#f44336"/>
+    <CardIcon Icon={CommentIcon} bgColor="#f44336" />
     <Card className={classes.card}>
       <Typography className={classes.title} color="textSecondary">
         {translate('pos.dashboard.pending_reviews')}
       </Typography>
-      <Typography
-        variant="headline"
-        component="h2"
-        className={classes.value}>
+      <Typography variant="headline" component="h2" className={classes.value}>
         <Link to={location} className={classes.titleLink}>
           {nb}
         </Link>
       </Typography>
-      <Divider/>
+      <Divider />
       <List>
         {reviews.map(record => (
           <ListItem
             key={record.id}
             button
             component={Link}
-            to={`/reviews/${record.id}`}>
+            to={`/reviews/${record.id}`}
+          >
             {customers[record.customer_id] ? (
               <Avatar
                 src={`${customers[record.customer_id].avatar}?size=32x32`}
                 className={classes.avatar}
               />
             ) : (
-              <Avatar/>
+              <Avatar />
             )}
 
             <ListItemText
-              primary={<StarRatingField record={record}/>}
+              primary={<StarRatingField record={record} />}
               secondary={record.comment}
               className={classes.listItemText}
               style={{paddingRight: 0}}

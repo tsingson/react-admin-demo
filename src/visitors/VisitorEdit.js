@@ -51,7 +51,8 @@ const VisitorEdit = ({classes, ...props}) => (
           addLabel={false}
           sort={{field: 'date', order: 'DESC'}}
           reference="commands"
-          target="customer_id">
+          target="customer_id"
+        >
           <Datagrid>
             <DateField source="date" />
             <TextField source="reference" />
@@ -70,7 +71,8 @@ const VisitorEdit = ({classes, ...props}) => (
           addLabel={false}
           sort={{field: 'date', order: 'DESC'}}
           reference="reviews"
-          target="customer_id">
+          target="customer_id"
+        >
           <Datagrid filter={{status: 'approved'}}>
             <DateField source="date" />
             <ProductReferenceField />

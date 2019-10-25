@@ -16,7 +16,8 @@ class BulkRejectButton extends Component {
     return (
       <Button
         label="resources.reviews.action.reject"
-        onClick={this.handleClick}>
+        onClick={this.handleClick}
+      >
         <ThumbDown />
       </Button>
     );

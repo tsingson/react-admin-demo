@@ -47,24 +47,25 @@ class Dashboard extends Component {
       sort: {field: 'date', order: 'DESC'},
       pagination: {page: 1, perPage: 50},
     });
-    const aggregations = recentOrders.filter(
-      order => order.status !== 'cancelled').reduce(
-      (stats, order) => {
-        if (order.status !== 'cancelled') {
-          stats.revenue += order.total;
-          stats.nbNewOrders++;
-        }
-        if (order.status === 'ordered') {
-          stats.pendingOrders.push(order);
-        }
-        return stats;
-      },
-      {
-        revenue: 0,
-        nbNewOrders: 0,
-        pendingOrders: [],
-      },
-    );
+    const aggregations = recentOrders
+      .filter(order => order.status !== 'cancelled')
+      .reduce(
+        (stats, order) => {
+          if (order.status !== 'cancelled') {
+            stats.revenue += order.total;
+            stats.nbNewOrders++;
+          }
+          if (order.status === 'ordered') {
+            stats.pendingOrders.push(order);
+          }
+          return stats;
+        },
+        {
+          revenue: 0,
+          nbNewOrders: 0,
+          pendingOrders: [],
+        },
+      );
     this.setState({
       revenue: aggregations.revenue.toLocaleString(undefined, {
         style: 'currency',
@@ -143,11 +144,11 @@ class Dashboard extends Component {
           <div>
             <div style={styles.flexColumn}>
               <div style={{marginBottom: '2em'}}>
-                <Welcome/>
+                <Welcome />
               </div>
               <div style={styles.flex}>
-                <MonthlyRevenue value={revenue}/>
-                <NbNewOrders value={nbNewOrders}/>
+                <MonthlyRevenue value={revenue} />
+                <NbNewOrders value={nbNewOrders} />
               </div>
               <div style={styles.singleCol}>
                 <PendingOrders
@@ -161,11 +162,11 @@ class Dashboard extends Component {
         small={
           <div style={styles.flexColumn}>
             <div style={styles.singleCol}>
-              <Welcome/>
+              <Welcome />
             </div>
             <div style={styles.flex}>
-              <MonthlyRevenue value={revenue}/>
-              <NbNewOrders value={nbNewOrders}/>
+              <MonthlyRevenue value={revenue} />
+              <NbNewOrders value={nbNewOrders} />
             </div>
             <div style={styles.singleCol}>
               <PendingOrders
@@ -179,11 +180,11 @@ class Dashboard extends Component {
           <div style={styles.flex}>
             <div style={styles.leftCol}>
               <div style={styles.flex}>
-                <MonthlyRevenue value={revenue}/>
-                <NbNewOrders value={nbNewOrders}/>
+                <MonthlyRevenue value={revenue} />
+                <NbNewOrders value={nbNewOrders} />
               </div>
               <div style={styles.singleCol}>
-                <Welcome/>
+                <Welcome />
               </div>
               <div style={styles.singleCol}>
                 <PendingOrders
@@ -199,10 +200,7 @@ class Dashboard extends Component {
                   reviews={pendingReviews}
                   customers={pendingReviewsCustomers}
                 />
-                <NewCustomers
-                  nb={nbNewCustomers}
-                  visitors={newCustomers}
-                />
+                <NewCustomers nb={nbNewCustomers} visitors={newCustomers} />
               </div>
             </div>
           </div>

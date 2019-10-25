@@ -30,7 +30,8 @@ export const ProductFilter = props => (
     <ReferenceInput
       source="category_id"
       reference="categories"
-      sort={{field: 'id', order: 'ASC'}}>
+      sort={{field: 'id', order: 'ASC'}}
+    >
       <SelectInput source="name" />
     </ReferenceInput>
     <NumberInput source="width_gte" />
@@ -50,7 +51,8 @@ const ProductList = props => (
     {...props}
     filters={<ProductFilter />}
     perPage={20}
-    sort={{field: 'id', order: 'ASC'}}>
+    sort={{field: 'id', order: 'ASC'}}
+  >
     <GridList />
   </List>
 );

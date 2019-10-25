@@ -33,10 +33,7 @@ const VisitorCreate = ({classes, ...props}) => (
           source="first_name"
           formClassName={classes.first_name}
         />
-        <TextInput
-          source="last_name"
-          formClassName={classes.last_name}
-        />
+        <TextInput source="last_name" formClassName={classes.last_name} />
         <TextInput
           type="email"
           source="email"
@@ -44,15 +41,12 @@ const VisitorCreate = ({classes, ...props}) => (
           fullWidth={true}
           formClassName={classes.email}
         />
-        <DateInput source="birthday"/>
+        <DateInput source="birthday" />
       </FormTab>
       <FormTab label="resources.customers.tabs.address" path="address">
-        <LongTextInput
-          source="address"
-          formClassName={classes.address}
-        />
-        <TextInput source="zipcode" formClassName={classes.zipcode}/>
-        <TextInput source="city" formClassName={classes.city}/>
+        <LongTextInput source="address" formClassName={classes.address} />
+        <TextInput source="zipcode" formClassName={classes.zipcode} />
+        <TextInput source="city" formClassName={classes.city} />
       </FormTab>
     </TabbedForm>
   </Create>

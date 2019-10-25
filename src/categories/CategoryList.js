@@ -11,9 +11,9 @@ const styles = {
 const CategoryList = ({classes, ...props}) => (
   <List {...props} sort={{field: 'name', order: 'ASC'}}>
     <Datagrid>
-      <TextField source="name" className={classes.name}/>
-      <LinkToRelatedProducts/>
-      <EditButton/>
+      <TextField source="name" className={classes.name} />
+      <LinkToRelatedProducts />
+      <EditButton />
     </Datagrid>
   </List>
 );

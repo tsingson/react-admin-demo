@@ -10,9 +10,9 @@ import Basket from '../orders/Basket';
 const CustomerField = ({record}) => (
   <Typography>
     {record.first_name} {record.last_name}
-    <br/>
+    <br />
     {record.address}
-    <br/>
+    <br />
     {record.city}, {record.zipcode}
   </Typography>
 );
@@ -43,8 +43,9 @@ const InvoiceShow = props => (
                   source="customer_id"
                   basePath="/invoices"
                   record={record}
-                  linkType={false}>
-                  <CustomerField/>
+                  linkType={false}
+                >
+                  <CustomerField />
                 </ReferenceField>
               </Grid>
             </Grid>
@@ -70,8 +71,9 @@ const InvoiceShow = props => (
                     source="command_id"
                     basePath="/invoices"
                     record={record}
-                    linkType={false}>
-                    <TextField source="reference"/>
+                    linkType={false}
+                  >
+                    <TextField source="reference" />
                   </ReferenceField>
                 </Typography>
               </Grid>
@@ -83,8 +85,9 @@ const InvoiceShow = props => (
                 source="command_id"
                 basePath="/invoices"
                 record={record}
-                linkType={false}>
-                <Basket/>
+                linkType={false}
+              >
+                <Basket />
               </ReferenceField>
             </div>
           </CardContent>

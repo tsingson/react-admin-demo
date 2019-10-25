@@ -29,7 +29,8 @@ const CategoryEdit = props => (
         target="category_id"
         label="resources.categories.fields.products"
         helperText="Select categories"
-        perPage={5}>
+        perPage={5}
+      >
         <Datagrid>
           <ThumbnailField />
           <ProductRefField source="reference" />

@@ -40,19 +40,20 @@ class Menu extends Component {
     return (
       <div>
         {' '}
-        <DashboardMenuItem onClick={onMenuClick}/>
+        <DashboardMenuItem onClick={onMenuClick} />
         <SubMenu
           handleToggle={() => this.handleToggle('menuSales')}
           isOpen={this.state.menuSales}
           sidebarIsOpen={open}
           name="pos.menu.sales"
-          icon={<orders.icon/>}>
+          icon={<orders.icon />}
+        >
           <MenuItemLink
             to={`/commands`}
             primaryText={translate(`resources.commands.name`, {
               smart_count: 2,
             })}
-            leftIcon={<orders.icon/>}
+            leftIcon={<orders.icon />}
             onClick={onMenuClick}
           />
           <MenuItemLink
@@ -60,7 +61,7 @@ class Menu extends Component {
             primaryText={translate(`resources.invoices.name`, {
               smart_count: 2,
             })}
-            leftIcon={<invoices.icon/>}
+            leftIcon={<invoices.icon />}
             onClick={onMenuClick}
           />
         </SubMenu>
@@ -69,13 +70,14 @@ class Menu extends Component {
           isOpen={this.state.menuCatalog}
           sidebarIsOpen={open}
           name="pos.menu.catalog"
-          icon={<products.icon/>}>
+          icon={<products.icon />}
+        >
           <MenuItemLink
             to={`/products`}
             primaryText={translate(`resources.products.name`, {
               smart_count: 2,
             })}
-            leftIcon={<products.icon/>}
+            leftIcon={<products.icon />}
             onClick={onMenuClick}
           />
           <MenuItemLink
@@ -83,7 +85,7 @@ class Menu extends Component {
             primaryText={translate(`resources.categories.name`, {
               smart_count: 2,
             })}
-            leftIcon={<categories.icon/>}
+            leftIcon={<categories.icon />}
             onClick={onMenuClick}
           />
         </SubMenu>
@@ -92,13 +94,14 @@ class Menu extends Component {
           isOpen={this.state.menuCustomer}
           sidebarIsOpen={open}
           name="pos.menu.customers"
-          icon={<visitors.icon/>}>
+          icon={<visitors.icon />}
+        >
           <MenuItemLink
             to={`/customers`}
             primaryText={translate(`resources.customers.name`, {
               smart_count: 2,
             })}
-            leftIcon={<visitors.icon/>}
+            leftIcon={<visitors.icon />}
             onClick={onMenuClick}
           />
           <MenuItemLink
@@ -106,7 +109,7 @@ class Menu extends Component {
             primaryText={translate(`resources.segments.name`, {
               smart_count: 2,
             })}
-            leftIcon={<LabelIcon/>}
+            leftIcon={<LabelIcon />}
             onClick={onMenuClick}
           />
         </SubMenu>
@@ -115,7 +118,7 @@ class Menu extends Component {
           primaryText={translate(`resources.reviews.name`, {
             smart_count: 2,
           })}
-          leftIcon={<reviews.icon/>}
+          leftIcon={<reviews.icon />}
           onClick={onMenuClick}
         />
         <Responsive
@@ -123,7 +126,7 @@ class Menu extends Component {
             <MenuItemLink
               to="/configuration"
               primaryText={translate('pos.configuration')}
-              leftIcon={<SettingsIcon/>}
+              leftIcon={<SettingsIcon />}
               onClick={onMenuClick}
             />
           }

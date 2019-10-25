@@ -29,8 +29,9 @@ const LinkToRelatedCustomers = ({classes, segment, translate}) => (
         filter: JSON.stringify({groups: segment}),
       }),
     }}
-    className={classes.link}>
-    <visitors.icon className={classes.icon}/>
+    className={classes.link}
+  >
+    <visitors.icon className={classes.icon} />
     {translate('resources.segments.fields.customers')}
   </Button>
 );

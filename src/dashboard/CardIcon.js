@@ -20,7 +20,7 @@ const styles = {
 
 const CardIcon = ({Icon, classes, bgColor}) => (
   <Card className={classes.card} style={{backgroundColor: bgColor}}>
-    <Icon className={classes.icon}/>
+    <Icon className={classes.icon} />
   </Card>
 );
 

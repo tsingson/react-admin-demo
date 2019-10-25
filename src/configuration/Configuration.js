@@ -14,29 +14,31 @@ const styles = {
 };
 
 const Configuration = ({
-                         classes,
-                         theme,
-                         locale,
-                         changeTheme,
-                         changeLocale,
-                         translate,
-                       }) => (
+  classes,
+  theme,
+  locale,
+  changeTheme,
+  changeLocale,
+  translate,
+}) => (
   <Card>
-    <Title title={translate('pos.configuration')}/>
+    <Title title={translate('pos.configuration')} />
     <CardContent>
       <div className={classes.label}>{translate('pos.theme.name')}</div>
       <Button
         variant="raised"
         className={classes.button}
         color={theme === 'light' ? 'primary' : 'default'}
-        onClick={() => changeTheme('light')}>
+        onClick={() => changeTheme('light')}
+      >
         {translate('pos.theme.light')}
       </Button>
       <Button
         variant="raised"
         className={classes.button}
         color={theme === 'dark' ? 'primary' : 'default'}
-        onClick={() => changeTheme('dark')}>
+        onClick={() => changeTheme('dark')}
+      >
         {translate('pos.theme.dark')}
       </Button>
     </CardContent>
@@ -46,14 +48,16 @@ const Configuration = ({
         variant="raised"
         className={classes.button}
         color={locale === 'en' ? 'primary' : 'default'}
-        onClick={() => changeLocale('en')}>
+        onClick={() => changeLocale('en')}
+      >
         en
       </Button>
       <Button
         variant="raised"
         className={classes.button}
-        color={locale === 'fr' ? 'primary' : 'default'}
-        onClick={() => changeLocale('fr')}>
+        color={locale === 'cn' ? 'primary' : 'default'}
+        onClick={() => changeLocale('cn')}
+      >
         fr
       </Button>
     </CardContent>

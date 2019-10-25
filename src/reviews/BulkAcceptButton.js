@@ -18,7 +18,8 @@ class BulkAcceptButton extends Component {
     return (
       <Button
         label="resources.reviews.action.accept"
-        onClick={this.handleClick}>
+        onClick={this.handleClick}
+      >
         <ThumbUp />
       </Button>
     );

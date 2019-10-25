@@ -24,7 +24,8 @@ class RejectButton extends Component {
         variant="outlined"
         color="primary"
         size="small"
-        onClick={this.handleReject}>
+        onClick={this.handleReject}
+      >
         <ThumbDown
           color="primary"
           style={{paddingRight: '0.5em', color: 'red'}}

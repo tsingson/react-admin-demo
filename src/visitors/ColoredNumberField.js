@@ -5,8 +5,8 @@ const colored = WrappedComponent => {
   const Colored = props =>
     props.record[props.source] > 500 ? (
       <span style={{color: 'red'}}>
-                <WrappedComponent {...props} />
-            </span>
+        <WrappedComponent {...props} />
+      </span>
     ) : (
       <WrappedComponent {...props} />
     );

@@ -31,8 +31,9 @@ const LinkToRelatedProducts = ({classes, record, translate}) => (
         filter: JSON.stringify({category_id: record.id}),
       }),
     }}
-    className={classes.link}>
-    <products.icon className={classes.icon}/>
+    className={classes.link}
+  >
+    <products.icon className={classes.icon} />
     {translate('resources.categories.fields.products')}
   </Button>
 );

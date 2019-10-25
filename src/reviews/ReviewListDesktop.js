@@ -27,7 +27,8 @@ const ReviewListDesktop = ({classes, ...props}) => (
     rowClick="edit"
     rowStyle={rowStyle}
     classes={{headerRow: classes.headerRow}}
-    {...props}>
+    {...props}
+  >
     <DateField source="date" />
     <CustomerReferenceField linkType={false} />
     <ProductReferenceField linkType={false} />

@@ -12,14 +12,12 @@ import segments from './data';
 
 const Segments = ({translate}) => (
   <Card>
-    <Title title={translate('resources.segments.name')}/>
+    <Title title={translate('resources.segments.name')} />
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>
-            {translate('resources.segments.fields.name')}
-          </TableCell>
-          <TableCell/>
+          <TableCell>{translate('resources.segments.fields.name')}</TableCell>
+          <TableCell />
         </TableRow>
       </TableHead>
       <TableBody>
@@ -27,7 +25,7 @@ const Segments = ({translate}) => (
           <TableRow key={segment.id}>
             <TableCell>{translate(segment.name)}</TableCell>
             <TableCell>
-              <LinkToRelatedCustomers segment={segment.id}/>
+              <LinkToRelatedCustomers segment={segment.id} />
             </TableCell>
           </TableRow>
         ))}

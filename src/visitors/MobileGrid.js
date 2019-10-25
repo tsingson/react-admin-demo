@@ -46,17 +46,13 @@ const MobileGrid = ({classes, ids, data, basePath, translate}) => (
               />
             </div>
           }
-          avatar={<AvatarField record={data[id]} size="45"/>}
+          avatar={<AvatarField record={data[id]} size="45" />}
         />
         <CardContent className={classes.cardContent}>
           <div>
             {translate('resources.customers.fields.last_seen_gte')}
             &nbsp;
-            <DateField
-              record={data[id]}
-              source="last_seen"
-              type="date"
-            />
+            <DateField record={data[id]} source="last_seen" type="date" />
           </div>
           <div>
             {translate(
@@ -83,7 +79,7 @@ const MobileGrid = ({classes, ids, data, basePath, translate}) => (
         </CardContent>
         {data[id].groups && data[id].groups.length > 0 && (
           <CardContent className={classes.cardContent}>
-            <SegmentsField record={data[id]}/>
+            <SegmentsField record={data[id]} />
           </CardContent>
         )}
       </Card>
